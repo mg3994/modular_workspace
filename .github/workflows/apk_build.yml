@@ -37,6 +37,6 @@ jobs:
     - name: Push into Releases Tab
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "build/app/outputs/flutter-apk/*"
+        artifacts: "apps/equestre/build/app/outputs/flutter-apk/*"
         tag: v1.0.${{ github.run_number }}
         token: ${{ secrets.GITHUB_TOKEN}}
