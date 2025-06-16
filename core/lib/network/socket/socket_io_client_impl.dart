@@ -10,12 +10,23 @@ class SocketIOClient implements SocketClient {
   @override
   void connect() {
     _socket ??= io.io(
-      baseUrl,
-      io.OptionBuilder()
-          .setTransports(['polling', 'websocket']) // force WebSocket only
-          .enableForceNew()
-          .setPath('/socket.io') // default, but good to set explicitly
-          .build(),
+      // baseUrl
+      '${io.DevConfig().apiBaseUrl}:21741'
+      // 'http://185.48.228.171:21741'
+      ,
+        <String, dynamic>{
+          'transports': ['websocket','polling', "webtransport"],
+          'autoConnect': false,
+          'forceNew': true,
+          'upgrade': true,
+          
+        },
+      // io.OptionBuilder()
+      //     .setTransports(['polling', 'websocket']) // force WebSocket only
+      // .enableAutoConnect()
+      //     .enableForceNew()
+      //     .setPath('/socket.io') // default, but good to set explicitly
+      //     .build(),
     );
 
     _socket!.connect();

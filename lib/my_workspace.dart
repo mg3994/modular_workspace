@@ -15,4 +15,3 @@ export 'my_workspace_navigation.dart';
 // 
 export 'package:preferences/preferences.dart';
 
-export 'package:floating/floating.dart';

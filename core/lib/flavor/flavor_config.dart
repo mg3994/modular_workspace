@@ -13,7 +13,7 @@ abstract class FlavorConfig {
 class DevConfig extends FlavorConfig {
  const DevConfig();
   @override
-  String get apiBaseUrl => 'http://185.48.228.171:21741';
+  String get apiBaseUrl => 'http://185.48.228.171'; // port for ws is :21741
 
   @override
   String get appName => '[Dev] Equestre';
