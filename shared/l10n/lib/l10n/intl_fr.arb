@@ -1,0 +1,332 @@
+{
+  "@@locale": "fr",
+  "@@author": "Manish Gautam",
+  "@@last_modified": "2023-10-01",
+  "@@comment": "Fichier contenant les traductions françaises pour l'application.",
+  "@@context": "Utilisé pour l'internationalisation de l'application. Contient les paires clé-valeur pour les chaînes utilisées dans l'application.",
+
+  "VERSION1": "Live-Timing Equestre Version 2.8",
+  "@VERSION1": {
+    "description": "Version de l'application affichée à l'utilisateur."
+  },
+
+  "SERIES1": "Series1",
+  "@SERIES1": {
+    "description": "Nom de la première série d'événements."
+  },
+
+  "SERIES2": "Series2",
+  "@SERIES2": {
+    "description": "Nom de la deuxième série d'événements."
+  },
+
+  "SERIESRANKING": "Classement 1/2",
+  "@SERIESRANKING": {
+    "description": "Classement combiné des séries 1 et 2."
+  },
+
+  "CATEGORY": "Catégorie",
+  "@CATEGORY": {
+    "description": "Catégorie d'un événement ou compétition."
+  },
+
+  "VERSION_HISTORY": "Version History",
+  "@VERSION_HISTORY": {
+    "description": "Historique des versions affiché dans l'application."
+  },
+
+  "VERSION": "Version",
+  "@VERSION": {
+    "description": "Libellé indiquant la version actuelle."
+  },
+
+  "INFORMATION": "Information",
+  "@INFORMATION": {
+    "description": "Section d'information générale."
+  },
+
+  "DATE": "Date",
+  "@DATE": {
+    "description": "Date de l'événement ou de la compétition."
+  },
+
+  "BACK": "Back",
+  "@BACK": {
+    "description": "Bouton pour revenir à l'écran précédent."
+  },
+
+  "LIVE_EVENTS": "Live Events",
+  "@LIVE_EVENTS": {
+    "description": "Événements actuellement en direct."
+  },
+
+  "EVENT": "Concours",
+  "@EVENT": {
+    "description": "Nom ou identifiant de l'événement."
+  },
+
+  "COMPETITION": "Épreuve",
+  "@COMPETITION": {
+    "description": "Épreuve spécifique dans un concours."
+  },
+
+  "START_DATE": "date de début",
+  "@START_DATE": {
+    "description": "Date de début de l'événement."
+  },
+
+  "END_DATE": "date de fin",
+  "@END_DATE": {
+    "description": "Date de fin de l'événement."
+  },
+
+  "RANK": "Rang",
+  "@RANK": {
+    "description": "Classement actuel du participant."
+  },
+
+  "NUMBER": "No:",
+  "@NUMBER": {
+    "description": "Numéro du cavalier ou cheval."
+  },
+
+  "LIVE": "Live",
+  "@LIVE": {
+    "description": "Statut indiquant que l'événement est en cours."
+  },
+
+  "CURRENT": "au parcours",
+  "@CURRENT": {
+    "description": "Statut indiquant que le cavalier est sur le parcours."
+  },
+
+  "AT_FINISH": "à l'arrivée",
+  "@AT_FINISH": {
+    "description": "Statut indiquant que le cavalier a terminé."
+  },
+
+  "START_LIST": "Liste de depard",
+  "@START_LIST": {
+    "description": "Ordre de départ des concurrents."
+  },
+
+  "RANKING": "Classements",
+  "@RANKING": {
+    "description": "Classement général des résultats."
+  },
+
+  "TEAM_RANKING": "Team Classements",
+  "@TEAM_RANKING": {
+    "description": "Classement des équipes."
+  },
+
+  "EVENT_LIST": "Event List",
+  "@EVENT_LIST": {
+    "description": "Liste complète des événements."
+  },
+
+  "HORSE": "Cheval",
+  "@HORSE": {
+    "description": "Nom du cheval."
+  },
+
+  "RIDER": "Cavallier",
+  "@RIDER": {
+    "description": "Nom du cavalier."
+  },
+
+  "NATION": "Nation",
+  "@NATION": {
+    "description": "Pays ou nationalité du cavalier."
+  },
+
+  "ROUND": "Mange",
+  "@ROUND": {
+    "description": "Numéro ou type de manche de la compétition."
+  },
+
+  "JUMP_OFF": "Jump-Off",
+  "@JUMP_OFF": {
+    "description": "Épreuve de départage pour égalité."
+  },
+
+  "TIME": "Temps",
+  "@TIME": {
+    "description": "Temps réalisé sur le parcours."
+  },
+
+  "POINTS": "Points",
+  "@POINTS": {
+    "description": "Points obtenus par le participant."
+  },
+
+  "TOTAL_POINTS": "Total Points",
+  "@TOTAL_POINTS": {
+    "description": "Total des points accumulés."
+  },
+
+  "TOTAL_TIME": "Total Temps",
+  "@TOTAL_TIME": {
+    "description": "Temps total cumulé sur plusieurs manches."
+  },
+
+  "PENALTIES": "Penalties",
+  "@PENALTIES": {
+    "description": "Pénalités infligées au cavalier."
+  },
+
+  "CLASSFIED": "Classé",
+  "@CLASSFIED": {
+    "description": "Participant classé dans les résultats."
+  },
+
+  "NOT_PRESENT": "Forfait",
+  "@NOT_PRESENT": {
+    "description": "Participant absent au départ."
+  },
+
+  "NOT_STARTED": "Non-Partant",
+  "@NOT_STARTED": {
+    "description": "Participant inscrit mais n'a pas commencé."
+  },
+
+  "RETIRED": "Abandon",
+  "@RETIRED": {
+    "description": "Participant ayant abandonné l'épreuve."
+  },
+
+  "ELIMINATED": "Elimin.",
+  "@ELIMINATED": {
+    "description": "Participant éliminé de la compétition."
+  },
+
+  "OFF_COURSE": "Hors-Concours",
+  "@OFF_COURSE": {
+    "description": "Participant hors classement officiel."
+  },
+
+  "DISQUALIFIED": "Disqualifié.",
+  "@DISQUALIFIED": {
+    "description": "Participant disqualifié."
+  },
+
+  "NO_RUNNING_EVENT": "pas de Live-Timing pour le moment.",
+  "@NO_RUNNING_EVENT": {
+    "description": "Aucun événement en direct pour le moment."
+  },
+
+  "EVENT_FINISHED": "L'événement est terminé.",
+  "@EVENT_FINISHED": {
+    "description": "L'événement en cours est terminé."
+  },
+
+  "TIME_ALLOWED": "Temps accordé",
+  "@TIME_ALLOWED": {
+    "description": "Temps limite autorisé pour finir le parcours."
+  },
+
+  "IDEAL_TIME": "Temps optimum",
+  "@IDEAL_TIME": {
+    "description": "Temps idéal à atteindre sans pénalité."
+  },
+
+  "TIME_OPTIMUM": "Time Optimum",
+  "@TIME_OPTIMUM": {
+    "description": "Temps optimal calculé pour la performance."
+  },
+
+  "REGISTERED": "Registered",
+  "@REGISTERED": {
+    "description": "Nombre de participants inscrits."
+  },
+
+  "STARTED": "Started",
+  "@STARTED": {
+    "description": "Nombre de participants ayant commencé."
+  },
+
+  "CLEAR_ROUND": "Clear Round",
+  "@CLEAR_ROUND": {
+    "description": "Manche terminée sans pénalité."
+  },
+
+  "COMING_UP": "Non-traités",
+  "@COMING_UP": {
+    "description": "Participants à venir sur le parcours."
+  },
+
+  "TIME_DIFF": "Diff.",
+  "@TIME_DIFF": {
+    "description": "Différence de temps avec la référence."
+  },
+
+  "ETA": "Heure estimée d'achèvement: ",
+  "@ETA": {
+    "description": "Heure prévue de fin de l'épreuve."
+  },
+
+  "CONNECTED_COUNT": "Nombre de connexions: ",
+  "@CONNECTED_COUNT": {
+    "description": "Nombre d'utilisateurs connectés actuellement."
+  },
+
+  "HEIGHT": "Hauteur",
+  "@HEIGHT": {
+    "description": "Hauteur des obstacles ou critère de classement."
+  },
+
+  "INITIAL_LIST_AMOUNT": "Montant initiale",
+  "@INITIAL_LIST_AMOUNT": {
+    "description": "Montant de la récompense initialement prévue."
+  },
+
+  "NOTES": "Remarques",
+  "@NOTES": {
+    "description": "Notes ou commentaires supplémentaires."
+  },
+
+  "SCHEDULER_NUMBER": "Numèro de programme",
+  "@SCHEDULER_NUMBER": {
+    "description": "Numéro de l'épreuve dans le programme."
+  },
+
+  "CCRANKING": "CC Ranking",
+  "@CCRANKING": {
+    "description": "Classement cross-country."
+  },
+
+  "RUN_START": "Début de l'examen",
+  "@RUN_START": {
+    "description": "Moment du début de l'épreuve."
+  },
+
+  "JUDGES": "JUGE",
+  "@JUDGES": {
+    "description": "Nom ou fonction des juges."
+  },
+
+  "DRESSAGE": "DRESSAGE",
+  "@DRESSAGE": {
+    "description": "Discipline de dressage."
+  },
+
+  "JUMP": "SAUT",
+  "@JUMP": {
+    "description": "Discipline de saut d'obstacles."
+  },
+
+  "CROSS": "CROSS",
+  "@CROSS": {
+    "description": "Discipline de cross-country."
+  },
+
+  "TOTAL": "TOTAL",
+  "@TOTAL": {
+    "description": "Score ou points totaux."
+  },
+
+  "UNOFFICIAL": "TOUS LES RÉSULTATS SONT NON OFFICIELS",
+  "@UNOFFICIAL": {
+    "description": "Avertissement indiquant que les résultats ne sont pas définitifs."
+  }
+}
