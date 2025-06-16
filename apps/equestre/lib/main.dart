@@ -1,20 +1,24 @@
+import 'dart:io' show HttpOverrides,  HttpClient, SecurityContext, X509Certificate;
+
 import 'package:equestre/app/bootstrap.dart' show Bootstrap;
 
 import 'package:flutter/material.dart';
 import 'package:my_workspace/my_workspace.dart' as io;
-
-
-
-
-
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 void main() {
-  
+  HttpOverrides.global = MyHttpOverrides();
   runApp(
     io.ProviderScope(
       child: Bootstrap(),
     ),
   );
-  
 }
 
 class MyApp extends StatelessWidget {

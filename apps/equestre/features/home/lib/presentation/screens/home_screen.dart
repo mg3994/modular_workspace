@@ -18,6 +18,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   List<ConsumerModelElement> consumerList = [];
   PurpleConsumerModel? eventModel;
 
+var _connectedUserCounter = 0;
+
 
 @override
   void initState() {
@@ -26,7 +28,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     emitEvent();
     // Listen to incoming 'events'
     socketClient.on('events', _handleIncomingData);
-
+     socketClient.on('connectedUserCount', (data) {
+      setState(() {
+        _connectedUserCounter = data;
+      });
+    });
     super.initState();
   }
 
@@ -69,14 +75,33 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    eventModel?.eventTitle ?? 'No title',
-                    style: Theme.of(context).textTheme.bodyMedium,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        consumerList.isNotEmpty ? consumerList.first.id ?? 'No Event ID' : 'No Event ID',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      Text(
+                        ' Total Connected Users: $_connectedUserCounter',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 8),
-                  Text("Category: ${eventModel?.category}"),
-                  Text("Country: ${eventModel?.country}"),
-                  Text("Discipline: ${eventModel?.discipline}"),
+                  Text(
+                    consumerList.first.info?.title ?? 'No Event Title',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    Text(
+                    consumerList.isNotEmpty && consumerList[0].info?.startDate != null
+                      ? '${DateFormat('d MMMM y').format(consumerList[0].info!.startDate!)} - ${consumerList[0].info?.endDate != null ? DateFormat('d MMMM y').format(consumerList[0].info!.endDate!) : 'Unknown Date'}'
+                      : 'Unknown Date',
+                    ),
+                   
+                  Text("Category: ${consumerList.isNotEmpty ? consumerList[0].info?.category : 'Unknown'}"),
+                  Text("Country: ${consumerList.isNotEmpty ? consumerList[0].info?.country : 'Unknown'}"),
+                  Text("Discipline: ${consumerList.isNotEmpty ? consumerList[0].info?.discipline : 'Unknown'}"),
                   const Divider(),
                   Text(
                     'Participants:',
@@ -90,9 +115,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         final consumer = consumerList[index];
                         return Card(
                           child: ListTile(
+                            leading: consumer.info?.live == 1
+                                ? BlinkingLiveIcon()
+                              : const Icon(Icons.circle_outlined, color: Colors.grey),
                             title: Text(consumer.info?.eventTitle ?? 'No Title'),
-                            subtitle: Text("Paused: ${consumer.paused}"),
-                            trailing: Text(consumer.info?.height ?? ''),
+                            subtitle:   Text(
+                    consumerList.isNotEmpty && consumerList[0].info?.eventTime != null
+                      ? 'Event Start Time: ${consumerList[0].info!.eventTime!}'
+                      : 'Event Time: Unknown',
+                    ),
+                            trailing: Text(consumer.info?.category ?? ''),
                           ),
                         );
                       },
@@ -102,5 +134,47 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             )
           : const Center(child: CircularProgressIndicator()));
+  }
+}
+
+
+class BlinkingLiveIcon extends StatefulWidget {
+  const BlinkingLiveIcon({super.key});
+
+  @override
+  State<BlinkingLiveIcon> createState() => _BlinkingLiveIconState();
+}
+
+class _BlinkingLiveIconState extends State<BlinkingLiveIcon>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 800),
+      vsync: this,
+    )..repeat(reverse: true);
+    _animation = Tween<double>(begin: 0.3, end: 1.0).animate(_controller);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeTransition(
+      opacity: _animation,
+      child: const Icon(
+        Icons.circle,
+        color: Colors.red,
+        size: 20,
+      ),
+    );
   }
 }
